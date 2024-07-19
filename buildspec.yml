@@ -1,6 +1,11 @@
 version: 0.2
 
 phases:
+  pre_build:
+    commands:
+      - sudo wget https://dev.mysql.com/get/mysql80-community-release-el9-4.noarch.rpm
+      - sudo yum localinstall mysql80-community-release-el9-4.noarch.rpm -y
+      - sudo yum install mysql-server -y
   build:
     commands:
          - npm install
