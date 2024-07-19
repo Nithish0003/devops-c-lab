@@ -1,12 +1,14 @@
 FROM node:14
 
+RUN mkdir /app
+
 WORKDIR /app
 
-COPY /app/package.json .
+COPY package.json .
 
 RUN npm install
 
-COPY /app .
+COPY . /app
 
 EXPOSE 3000
 
