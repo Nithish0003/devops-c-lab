@@ -6,11 +6,14 @@ phases:
       - sudo wget https://dev.mysql.com/get/mysql80-community-release-el9-4.noarch.rpm
       - sudo yum localinstall mysql80-community-release-el9-4.noarch.rpm -y
       - sudo yum install mysql-server -y
+      - sudo dnf install docker
+      - sudo systemctl enable --now docker.service
   build:
     commands:
          - npm install
          - npm audit fix --force
-         - npm start
+         - docker build . -t lab:v1
+        #  - npm start
       #  - npm clean
       #  - npm compile
       #  - npm test
