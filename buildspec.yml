@@ -17,6 +17,8 @@ phases:
         - docker build . -t docker.io/nithishns/test:v1   
         # - docker push docker.io/nithishns/test:v1 
         # - docker run -d -p 3000:3000 --name node docker.io/nithishns/test:v1 
+  post_build:
+    commands:
         - npm start
       #  - npm clean
       #  - npm compile
