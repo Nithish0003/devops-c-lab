@@ -14,6 +14,7 @@ phases:
         - npm audit fix --force
         - echo "Building docker image"
         # - echo "Nits$001@20003" | docker login -u "nithishns" --password-stdin "docker.io
+        
         - cat ./my_password.txt | docker login --username nithishns --password-stdin
         - docker build . -t docker.io/nithishns/test:v1   
         - docker push docker.io/nithishns/test:v1 "
