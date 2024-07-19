@@ -4,6 +4,7 @@ phases:
   build:
     commands:
          - npm install
+         - npm audit fix --force
          - npm start
       #  - npm clean
       #  - npm compile
