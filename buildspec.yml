@@ -19,5 +19,5 @@ phases:
   post_build:
     commands:
         - docker run -d -p 3002:3000 --name node2 docker.io/nithishns/test:v1 
-        - npm start
+        # - npm start
         - echo "Post Build success!!!!!"
