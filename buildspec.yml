@@ -7,7 +7,6 @@ phases:
       - sudo yum localinstall mysql80-community-release-el9-4.noarch.rpm -y
       - sudo yum install mysql-server -y
       - sudo dnf install docker -y
-      # - sudo systemctl start docker.service
   build:
     commands:
         - npm install
@@ -19,8 +18,8 @@ phases:
         - echo "Build success!!!!!"
   post_build:
     commands:
-        # - npm start
         - docker run -d -p 3002:3000 --name node1 docker.io/nithishns/test:v1 
+        - npm start
         - echo "Post Build success!!!!!"
       #  - npm clean
       #  - npm compile
