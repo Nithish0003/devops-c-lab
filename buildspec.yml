@@ -16,10 +16,11 @@ phases:
         # - echo "Nits$001@20003" | docker login -u "nithishns" --password-stdin "docker.io"
         - docker build . -t docker.io/nithishns/test:v1   
         # - docker push docker.io/nithishns/test:v1 
-        # - docker run -d -p 3000:3000 --name node docker.io/nithishns/test:v1 
   post_build:
     commands:
         - npm start
+        # - docker run -d -p 3000:3000 --name node docker.io/nithishns/test:v1 
+
       #  - npm clean
       #  - npm compile
       #  - npm test
