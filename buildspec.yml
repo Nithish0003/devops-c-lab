@@ -10,9 +10,11 @@ phases:
       # - sudo systemctl start docker.service
   build:
     commands:
-         - npm install
-         - npm audit fix --force
-         - docker build . -t lab:v1
+        - npm install
+        - npm audit fix --force
+        - echo "Building docker image"
+        - docker build . -t lab:v1
+        - docker push lab:v1
         #  - npm start
       #  - npm clean
       #  - npm compile
