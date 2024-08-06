@@ -19,9 +19,9 @@ phases:
         - docker build . -t docker.io/nithishns/test:v1   
         - docker push docker.io/nithishns/test:v1 
         - echo "Build success!!!!!"
-  artifacts:
-    files:
-      - '*/'
+    artifacts:
+      files:
+        - '*/'
   # post_build:
   #   commands:
   #       # - docker run -d -p 3000:3000 --name node2 docker.io/nithishns/test:v1 
