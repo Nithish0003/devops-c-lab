@@ -1,13 +1,13 @@
 version: 0.2
 
 phases:
-  pre_build:
+  # pre_build:
     # commands:
     #   - sudo wget https://dev.mysql.com/get/mysql80-community-release-el9-4.noarch.rpm
     #   - sudo yum localinstall mysql80-community-release-el9-4.noarch.rpm -y
     #   - sudo yum install mysql-server -y
     #   - sudo dnf install docker -y
-    install:
+  install:
     runtime-versions:
       nodejs: latest
   build:
@@ -19,6 +19,9 @@ phases:
         - docker build . -t docker.io/nithishns/test:v1   
         - docker push docker.io/nithishns/test:v1 
         - echo "Build success!!!!!"
+  artifacts:
+  files:
+    - '*/'
   # post_build:
   #   commands:
   #       # - docker run -d -p 3000:3000 --name node2 docker.io/nithishns/test:v1 
